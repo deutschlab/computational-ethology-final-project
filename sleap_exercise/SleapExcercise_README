@@ -1,0 +1,49 @@
+There are 4 files to use in this tutorials:
+
+01_04_000000.mp4.inference.cleaned.210809_124446_18159206_rig1_2.proofread.000_000000.analysis.h5
+43_46_000000.mp4.inference.cleaned.210825_090819_18159206_rig1_2.proofread.000_000000.analysis.h5
+
+01_04_features.h5
+43_46_features.h5
+
+The first two are key point detection from Sleap after human proofreading.
+The other two contain feature that where extracted from the first two files.
+
+
+Here you can find example Sleap notebooks: https://docs.sleap.ai/latest/notebooks/notebooks-overview/
+Including this one - https://docs.sleap.ai/latest/notebooks/Analysis_examples/ 
+
+That can help you understanding the structure and usage of the analysis.h5 files.
+
+1-4: the Drosophila female was 1-4 hour old (after eclosion/birth)
+43-46: the Drosophila female was 43-46 hour old (after eclosion/birth)
+
+
+Example code (see more in the notebooks mentioned above; If you don't have h5py yet, install it with pip install h5py or conda install h5py.)-
+
+
+
+import h5py
+import numpy as np
+import matplotlib.pyplot as plt
+
+F = '<path-to-file>/01_04_features.h5'
+with h5py.File(F, 'r') as f:
+    Dist = f['/mfDist'][()].squeeze()   # squeeze turns a 1×N array into a plain vector
+
+fs = 150                                # sampling rate in Hz – replace with your frame rate
+t = np.arange(len(Dist)) / fs           # time axis in seconds
+
+plt.plot(t, Dist)
+plt.xlabel('Time (s)')
+plt.ylabel('Dist')
+plt.show()
+
+
+
+
+Dist is a vector that discribes the male-female distance (mfDist) for the entire experiment (30 minutes). 
+
+
+
+

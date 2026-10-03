@@ -16,6 +16,8 @@ The project has two parts. You will work with real data from neuroscience labs:
 
 The same instructions as printable PDFs: [Supervised](docs/SupervisedLearningAssignment.pdf) · [Unsupervised](docs/UnsupervisedLearningAssignment.pdf)
 
+**Extra (optional, not graded):** [raw SLEAP output files](sleap_exercise/README.md) of two fly experiments, for practicing with the `.h5` files that pose tables like ours come from.
+
 > **Key dates**
 > - **Submission deadline: November 17, 2026** (both parts)
 > - **Online meetings about your work: November 25–26, 2026** (Google Meet). Book your slot by **November 20**.
@@ -95,11 +97,12 @@ train = pd.read_csv("supervised/data/train.csv.gz")
 │       ├── blind_test.csv.gz      ← 120,000 frames, NO labels (you predict them)
 │       ├── train_short_labels.csv ← one label per 150-frame chunk (1,600)
 │       └── test_short_labels.csv  ← one label per 150-frame chunk (800)
-└── unsupervised/
-    ├── README.md                  ← unsupervised task: data description + tasks
-    ├── starter_unsupervised.ipynb ← loads the data, checks your output file
-    └── data/
-        └── electrophysiology_data.csv  ← 62 samples × 8 features
+├── unsupervised/
+│   ├── README.md                  ← unsupervised task: data description + tasks
+│   ├── starter_unsupervised.ipynb ← loads the data, checks your output file
+│   └── data/
+│       └── electrophysiology_data.csv  ← 62 samples × 8 features
+└── sleap_exercise/                ← optional: raw SLEAP .h5 files (download links + how to read them)
 ```
 
 The starter notebooks only load and describe the data. They do not solve any task.

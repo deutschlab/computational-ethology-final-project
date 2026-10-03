@@ -6,4 +6,5 @@ matplotlib
 seaborn
 scikit-learn
 umap-learn
+h5py
 jupyter
