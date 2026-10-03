@@ -1,10 +1,55 @@
-# Extra: Raw SLEAP Output Files (optional)
+# SLEAP Exercise: Raw Output Files
 
 [← Back to the main page](../README.md)
 
-This folder is **optional practice and is not part of the graded project**.
-The supervised task gives you the fly poses as a ready-made `.csv` table. Here you can work with the files that tables like that are made from: the `.h5` output of **SLEAP** after a human checked and corrected the tracking ("proofread"), and a file of features computed from it.
-Use them to see where the `.csv` data come from, and to practice building features and doing statistics straight from the `.h5` files.
+The supervised task gives you fly poses as a ready-made `.csv` table. This folder contains the kind of files such tables are made from: the `.h5` output of **SLEAP** after a human checked and corrected the tracking ("proofread"), and files of features computed from it.
+Use them to understand where the `.csv` data come from, and to practice creating features and doing statistics directly from the `.h5` files.
+
+## About the data
+
+From the README that comes with the data ([`SleapExcercise_README`](SleapExcercise_README)):
+
+> There are 4 files to use in this tutorials:
+>
+> - `01_04_000000.mp4.inference.cleaned.210809_124446_18159206_rig1_2.proofread.000_000000.analysis.h5`
+> - `43_46_000000.mp4.inference.cleaned.210825_090819_18159206_rig1_2.proofread.000_000000.analysis.h5`
+> - `01_04_features.h5`
+> - `43_46_features.h5`
+>
+> The first two are key point detection from Sleap after human proofreading.
+> The other two contain feature that where extracted from the first two files.
+>
+> Here you can find example Sleap notebooks: https://docs.sleap.ai/latest/notebooks/notebooks-overview/  
+> Including this one - https://docs.sleap.ai/latest/notebooks/Analysis_examples/
+>
+> That can help you understanding the structure and usage of the analysis.h5 files.
+>
+> 1-4: the Drosophila female was 1-4 hour old (after eclosion/birth)  
+> 43-46: the Drosophila female was 43-46 hour old (after eclosion/birth)
+>
+> Example code (see more in the notebooks mentioned above; If you don't have h5py yet, install it with pip install h5py or conda install h5py.)-
+
+```python
+import h5py
+import numpy as np
+import matplotlib.pyplot as plt
+
+F = '<path-to-file>/01_04_features.h5'
+with h5py.File(F, 'r') as f:
+    Dist = f['/mfDist'][()].squeeze()   # squeeze turns a 1×N array into a plain vector
+
+fs = 150                                # sampling rate in Hz – replace with your frame rate
+t = np.arange(len(Dist)) / fs           # time axis in seconds
+
+plt.plot(t, Dist)
+plt.xlabel('Time (s)')
+plt.ylabel('Dist')
+plt.show()
+```
+
+> Dist is a vector that discribes the male-female distance (mfDist) for the entire experiment (30 minutes).
+
+---
 
 ## The files
 
@@ -95,42 +140,3 @@ print(track_names, x.shape)
 ```
 
 To list everything inside any `.h5` file: `with h5py.File(path) as f: print(list(f.keys()))`.
-
----
-
-## Notes from the data providers
-
-The text below is the README that came with the data. The same text is also in [`SleapExcercise_README`](SleapExcercise_README).
-
-> The first two are key point detection from Sleap after human proofreading.
-> The other two contain feature that where extracted from the first two files.
->
-> Here you can find example Sleap notebooks: https://docs.sleap.ai/latest/notebooks/notebooks-overview/
-> Including this one - https://docs.sleap.ai/latest/notebooks/Analysis_examples/
->
-> That can help you understanding the structure and usage of the analysis.h5 files.
->
-> 1-4: the Drosophila female was 1-4 hour old (after eclosion/birth)
-> 43-46: the Drosophila female was 43-46 hour old (after eclosion/birth)
->
-> Example code (see more in the notebooks mentioned above; If you don't have h5py yet, install it with pip install h5py or conda install h5py.)-
-
-```python
-import h5py
-import numpy as np
-import matplotlib.pyplot as plt
-
-F = '<path-to-file>/01_04_features.h5'
-with h5py.File(F, 'r') as f:
-    Dist = f['/mfDist'][()].squeeze()   # squeeze turns a 1×N array into a plain vector
-
-fs = 150                                # sampling rate in Hz – replace with your frame rate
-t = np.arange(len(Dist)) / fs           # time axis in seconds
-
-plt.plot(t, Dist)
-plt.xlabel('Time (s)')
-plt.ylabel('Dist')
-plt.show()
-```
-
-> Dist is a vector that discribes the male-female distance (mfDist) for the entire experiment (30 minutes).

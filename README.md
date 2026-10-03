@@ -16,7 +16,7 @@ The project has two parts. You will work with real data from neuroscience labs:
 
 The same instructions as printable PDFs: [Supervised](docs/SupervisedLearningAssignment.pdf) · [Unsupervised](docs/UnsupervisedLearningAssignment.pdf)
 
-**Extra (optional, not graded):** [raw SLEAP output files](sleap_exercise/README.md) of two fly experiments, for practicing with the `.h5` files that pose tables like ours come from.
+**SLEAP exercise:** [raw SLEAP output files](sleap_exercise/README.md) of two fly experiments, to see where pose tables like ours come from and to practice working with the `.h5` files directly.
 
 > **Key dates**
 > - **Submission deadline: November 17, 2026** (both parts)
@@ -102,7 +102,7 @@ train = pd.read_csv("supervised/data/train.csv.gz")
 │   ├── starter_unsupervised.ipynb ← loads the data, checks your output file
 │   └── data/
 │       └── electrophysiology_data.csv  ← 62 samples × 8 features
-└── sleap_exercise/                ← optional: raw SLEAP .h5 files (download links + how to read them)
+└── sleap_exercise/                ← SLEAP exercise: raw .h5 files (README, download links, how to read them)
 ```
 
 The starter notebooks only load and describe the data. They do not solve any task.
