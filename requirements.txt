@@ -1,0 +1,9 @@
+# Python packages for the final project (Python 3.9 or newer).
+# Install with:  pip install -r requirements.txt
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+umap-learn
+jupyter

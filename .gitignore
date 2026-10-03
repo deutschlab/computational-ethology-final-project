@@ -1,0 +1,17 @@
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Uncompressed copies of the data (the repo keeps only the .csv.gz files)
+supervised/data/train.csv
+supervised/data/test.csv
+supervised/data/blind_test.csv
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
