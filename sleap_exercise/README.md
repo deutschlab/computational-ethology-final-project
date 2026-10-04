@@ -69,6 +69,8 @@ Each experiment has two files:
 | `01_04_features.h5` | 278 MB | Features extracted from the `01_04` key points |
 | `43_46_features.h5` | 288 MB | Features extracted from the `43_46` key points |
 
+**Note on `01_04_features.h5` (corrected October 4, 2026):** in the first version of this file, the male and female were swapped (the features were computed with the SLEAP track "Male" treated as the female). The file on the download page has been corrected: all male/female datasets (`trxM`/`trxF`, `mFV`/`fFV`, `wingML`/`wingFL`, `mfAng`/`fmAng`, …) were swapped back. `arcThetaL` and `arcThetaR` depend only on the male and could not be corrected this way, so in this file they are empty (`NaN`); use them from `43_46_features.h5` only. In the `analysis.h5` files the tracks were always correct: in `01_04` the male is the track named `Male`, in `43_46` the male is `track_1` and the female `track_0`.
+
 ## Download
 
 The files are too large to be stored in the repository itself. They are attached to a **release** of this repository:
