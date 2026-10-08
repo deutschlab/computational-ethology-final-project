@@ -4,6 +4,8 @@
 Summer School, University of Haifa · October 4–8, 2026
 Coordinators: Dr. Lilach Avitan (Hebrew University) · Dr. David (Dudi) Deutsch (University of Haifa)
 
+**Questions about the project? Contact Aviad Sivan: [asivan08@campus.haifa.ac.il](mailto:asivan08@campus.haifa.ac.il)**
+
 Welcome! This repository contains everything you need for the final project of the summer school:
 the instructions, the data, and starter notebooks that load the data for you.
 
@@ -122,16 +124,17 @@ Each part is submitted as a **Jupyter notebook**. We read your notebook like a s
 - Use at least one **ordered or unordered list** in a markdown cell.
 - *Supervised part only:* include at least one **formula** that you actually use (for example accuracy, a standard error or a distance) and explain in words what each part means. Any notation is fine: plain text, or LaTeX in a markdown cell.
 
-**Working alone or in pairs**
+**Working in pairs**
 
-- You may work alone or with **one** partner (at most two students per submission).
-- If you work in a pair, put both names in the first cell of the notebook and submit once.
+- The project is done in **pairs** (two students per submission).
+- Put both names in the first cell of each notebook and submit once per pair.
+- If you have a problem finding a partner, or any other problem with working in a pair, contact Aviad Sivan ([asivan08@campus.haifa.ac.il](mailto:asivan08@campus.haifa.ac.il)) as early as possible.
 
 **AI assistants**
 
 You may use AI assistants (for example ChatGPT, Claude or Copilot) to help you write code.
 You are responsible for understanding every step. In the online meeting we will ask how you solved the task, why you chose your methods, what your results mean and what their limitations are.
-**We grade this understanding, not the code.**
+**We grade your understanding of both the code and the models: you must be able to explain the code you submit, and above all what your models do and what the results mean.**
 
 **Methods beyond the course**
 
@@ -143,11 +146,11 @@ Tools that were not taught in the course are fine. If you use one, explain it so
 
 | Part | Files to upload | Rows |
 |---|---|---|
-| Supervised | `SupervisedLearning_<your name(s)>.ipynb`, saved **with its outputs** | |
+| Supervised | `SupervisedLearning_<your names>.ipynb`, saved **with its outputs** | |
 | | The same notebook exported to **HTML** | |
 | | `blind_test_prediction.csv` (column `prediction`, values 0/1, one row per row of `blind_test.csv.gz`) | 120,000 |
 | | `blind_test_short_prediction.csv` (column `prediction`, values 0/1, one row per 150-frame chunk) | 800 |
-| Unsupervised | `UnsupervisedLearning_<your name(s)>.ipynb`, saved **with its outputs** | |
+| Unsupervised | `UnsupervisedLearning_<your names>.ipynb`, saved **with its outputs** | |
 | | The same notebook exported to **HTML** | |
 | | `electrophysiology_data_kmeans.csv` (the 8 feature columns + `kmeans_labels`, no index column) | 62 |
 
@@ -158,7 +161,7 @@ Before you submit:
 3. Check your csv files with the checking cell at the end of each starter notebook.
 4. **Do not upload the data files.**
 
-**Upload to:** [the submission form](https://docs.google.com/forms/d/e/1FAIpQLSfs2qfkkCtoy6zOEEFKLV6E8L24RO0alo2U9gMcg4PfKKDoyA/viewform). You need to be signed in to a Google account to upload files. The form also asks for your student ID number (and your partner's, if you worked in a pair).
+**Upload to:** [the submission form](https://docs.google.com/forms/d/e/1FAIpQLSfs2qfkkCtoy6zOEEFKLV6E8L24RO0alo2U9gMcg4PfKKDoyA/viewform). You need to be signed in to a Google account to upload files. The form also asks for the student ID numbers of both partners.
 Need to replace a file before the deadline? Use the **"Edit response"** link on the confirmation page or in the emailed copy of your response, instead of submitting a second time.
 **Deadline:** November 17, 2026
 
@@ -170,13 +173,13 @@ Need to replace a file before the deadline? Use the **"Edit response"** link on 
 - A high accuracy is a bonus, not the goal. **A modest result that you understand and report honestly is worth more than a high score you cannot explain.**
 - After you submit, we will meet each of you **online (Google Meet)** on **November 25–26, 2026** for about 15 minutes and ask about your work. Be ready to share your screen and walk us through your notebook.
 - **Book your meeting yourself** on the [booking page](https://calendar.app.google/t4j3KoTfcUXpawDEA) after you submit, and no later than November 20.
-- **If you worked in a pair, each partner books their own meeting.**
+- **Each partner books their own meeting.**
 - The booking confirmation and calendar invitation contain the Google Meet link. To change your time, cancel with the link in the confirmation email and book another free slot.
 
 | Part | Points |
 |---|---|
-| Supervised | Tasks 1–7: 50 points · Tasks 8–12: [TBD] |
-| Unsupervised | Tasks 1–2: 50 + 50 points · Tasks 3–7: [TBD] |
+| Supervised | Tasks 1–7: 25 points · Tasks 8–12: 5 points each (25) · total 50 |
+| Unsupervised | Tasks 1–2: 50 + 50 points · Tasks 3–7: 5 points each (25) · total 125 |
 
 The point values for each task are given in the task pages.
 
@@ -202,7 +205,6 @@ Course coordinator: Dr. David (Dudi) Deutsch, ddeutsch1@univ.haifa.ac.il
 <!--
 Notes for instructors (not rendered on GitHub):
 - If the repository moves or is renamed, update its address in this file (Colab badges, git clone) and REPO_URL in both starter notebooks.
-- Search the repo for "[TBD]" to find everything still to fill in.
 - For a new year: update the course dates at the top, the key dates (deadline, online meetings, booking deadline; also under "What to submit" and "Grading") and the points.
 - The submission form, its responses sheet and the booking page (a Google Calendar appointment schedule: 30-minute slots, one per student, Google Meet) belong to the person running the project that year. Create them in your own Google account (all in the same account, since uploads go to the form owner's Drive) and replace the form link, the booking link and the contact email.
 -->

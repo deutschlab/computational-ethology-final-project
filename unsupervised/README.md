@@ -7,8 +7,8 @@ In short, upload three files:
 
 | File | Content |
 |---|---|
-| `UnsupervisedLearning_<your name(s)>.ipynb` | Your notebook, saved with its outputs |
-| `UnsupervisedLearning_<your name(s)>.html` | The same notebook exported to HTML |
+| `UnsupervisedLearning_<your names>.ipynb` | Your notebook, saved with its outputs |
+| `UnsupervisedLearning_<your names>.html` | The same notebook exported to HTML |
 | `electrophysiology_data_kmeans.csv` | 62 rows: the 8 feature columns + `kmeans_labels`, without the index column – see Task 2 |
 
 The csv file is checked for **format and consistency with your notebook**. Cluster numbers are arbitrary, so there is no single correct file to compare with.
@@ -58,7 +58,7 @@ The file also has an **unnamed first column with the row number**. It is not a f
    3. Plot the elbow plot.
 3. Add a column named **`kmeans_labels`** with the KMeans cluster labels. Use the number of clusters that you chose (state it and explain your choice). Save the data frame, **without** the unnamed index column and with the new column, as `electrophysiology_data_kmeans.csv`.
 
-### 3. Feature Scaling ([TBD] points)
+### 3. Feature Scaling (5 points)
 
 1. Standardize the 8 features (mean 0, standard deviation 1) before running PCA, t-SNE, UMAP and the clustering.
 2. Compare the PCA plot **with and without** scaling. Does the picture change?
@@ -66,7 +66,7 @@ The file also has an **unnamed first column with the row number**. It is not a f
 
 *Why we ask:* without scaling, the feature with the largest numbers dominates every distance and every principal component.
 
-### 4. Silhouette Score ([TBD] points)
+### 4. Silhouette Score (5 points)
 
 1. For KMeans with 2 to 10 clusters, compute the **silhouette score** and plot it against the number of clusters, next to the elbow plot.
 2. Do the two methods agree on the number of clusters?
@@ -74,7 +74,7 @@ The file also has an **unnamed first column with the row number**. It is not a f
 
 *Why we ask:* the silhouette score describes how well each point fits its own cluster compared with the nearest other cluster (higher is better). It is useful because the bend of the elbow plot is not always obvious.
 
-### 5. Cluster Profiles ([TBD] points)
+### 5. Cluster Profiles (5 points)
 
 1. After choosing the number of clusters, show the **mean of each original feature per cluster** (a table or a bar plot).
 2. Because the features are on very different scales, also compare **standardized** means (for example in a heatmap), and report **how many samples** each cluster contains.
@@ -83,14 +83,14 @@ The file also has an **unnamed first column with the row number**. It is not a f
 
 *Why we ask:* looking at the original features per cluster tells you what the clusters are beyond their color.
 
-### 6. Are the Clusters Real? ([TBD] points)
+### 6. Are the Clusters Real? (5 points)
 
 1. Create a **control data set** by shuffling every column of your standardized data independently. This keeps each feature's values but destroys the relationships between features. Run KMeans on it with the same number of clusters, compute the silhouette score, and repeat a few times.
 2. Compare these scores with the score of the real data. What do you conclude about the clusters in the real data? There is no single right answer: explain what this comparison does and does not show.
 
 *Why we ask:* a clustering algorithm always returns clusters, even for data without any structure. A control shows what a "no structure" result looks like.
 
-### 7. Summary: Strengths and Limitations ([TBD] points)
+### 7. Summary: Strengths and Limitations (5 points)
 
 Write a short summary (about 6–10 sentences, in a markdown cell) that answers:
 
