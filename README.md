@@ -154,6 +154,8 @@ Tools that were not taught in the course are fine. If you use one, explain it so
 | | The same notebook exported to **HTML** | |
 | | `electrophysiology_data_kmeans.csv` (the 8 feature columns + `kmeans_labels`, no index column) | 62 |
 
+**What the csv files should look like, in words:** the two prediction files are plain csv files with a header row and a single column named `prediction`, containing 0 or 1 on every row, in the order of the blind test data, and nothing else (no row numbers, no features). The k-means file is the original data table (the 8 feature columns, original unscaled values, original row order, no row-number column) with one extra last column `kmeans_labels` holding the cluster number of each sample. The starter notebooks show the first lines of each file, the code that saves it, and a checking cell that tells you what to fix if something is off. If the checker reports a problem you cannot fix, submit anyway and explain it in a sentence in your notebook or in an email.
+
 Before you submit:
 
 1. Run **Kernel → Restart & Run All** (Colab: **Runtime → Restart session and run all**) once, so the notebook runs from the first cell to the last and the saved outputs match the code.
